@@ -38,7 +38,7 @@ const TopicsSection = () => {
   return (
     <section className="py-20 bg-gray-50">
       <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-4xl font-bold text-gray-900 mb-4">What You'll Learn</h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Dive deep into the world of data analytics and artificial intelligence with comprehensive coverage of key topics
@@ -49,9 +49,10 @@ const TopicsSection = () => {
           {topics.map((topic, index) => (
             <div 
               key={index}
-              className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-gray-100"
+              className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 group animate-fade-in"
+              style={{ animationDelay: `${300 + index * 100}ms` }}
             >
-              <div className="text-blue-600 mb-4">
+              <div className="text-blue-600 mb-4 transition-transform duration-300 group-hover:scale-110">
                 {topic.icon}
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">{topic.title}</h3>
